@@ -17,5 +17,5 @@
 
 
 
-!\[项目截图](images/screenshot.png)
+!\[项目截图](./images/screenshot.png)
 
