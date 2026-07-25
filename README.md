@@ -17,5 +17,5 @@
 
 
 
-!\[项目截图](./images/screenshot.png)
+<img src="images/screenshot.png" alt="项目截图" width="600">
 
