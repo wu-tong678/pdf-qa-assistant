@@ -1,0 +1,20 @@
+# 虚拟环境
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 向量库
+chroma_db/
+chroma_db_*/
+
+# 密钥和配置
+.env
+.streamlit/secrets.toml
