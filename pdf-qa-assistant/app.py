@@ -72,7 +72,7 @@ def process_pdf(uploaded_file):
         '''tempfile.NamedTemporaryFile()：创建一个临时文件对象。
            delete=False 表示关闭文件后不自动删除；suffix=".pdf" 指定文件扩展名为 .pdf；dir="." 表示在当前目录创建。
            with ... as tmp_file：上下文管理器，确保文件在使用后正确关闭'''
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf", dir=".") as tmp_file:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf", dir="..") as tmp_file:
             tmp_file.write(file_content)
             #获取临时文件的路径。
             tmp_path = tmp_file.name

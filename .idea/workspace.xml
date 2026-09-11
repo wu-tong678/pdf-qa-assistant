@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d48401aa-a25b-40a0-906d-55618be252f5" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/chroma.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/f980d632-22d1-46e2-9ce0-0f3be771ac12/data_level0.bin" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/f980d632-22d1-46e2-9ce0-0f3be771ac12/data_level0.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/f980d632-22d1-46e2-9ce0-0f3be771ac12/length.bin" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db_e860c154de9338af084149f9cecb85a6/f980d632-22d1-46e2-9ce0-0f3be771ac12/length.bin" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3BySE7A8oVP5L0PI3duDD3cKL7G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Lang_chain_Agent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lang_chain_tool.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PDF_RAG.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chat_bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.evaluate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.evaluate_with_rerank.executor&quot;: &quot;Run&quot;,
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.langchain_RAG.executor&quot;: &quot;Run&quot;,
+    &quot;Python.one-4.6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.puzzle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xiangliang_jiansuo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="d48401aa-a25b-40a0-906d-55618be252f5" name="更改" comment="" />
+      <created>1775459702218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775459702218</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="简单聊天机器人" />
+    <option name="LAST_COMMIT_MESSAGE" value="简单聊天机器人" />
+    <option name="LAST_CHUNK_COMMIT_MESSAGE" value="简单聊天机器人" />
+  </component>
+</project>
