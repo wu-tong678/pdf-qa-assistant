@@ -2,16 +2,17 @@ import json
 import os
 from langchain_chroma import Chroma
 from langchain_community.embeddings import ZhipuAIEmbeddings
-import streamlit as st
+from dotenv import load_dotenv
 
+load_dotenv()
 # 获取当前文件所在目录
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 加载向量库（使用你实际存在的哈希文件夹）
-persist_dir = os.path.join(current_dir, "chroma_db_e860c154de9338af084149f9cecb85a6")
+persist_dir = os.path.join(current_dir, "chroma_db_plan")
 embeddings = ZhipuAIEmbeddings(
     model="embedding-2",
-    api_key=st.secrets["ZHIPU_API_KEY"]
+    api_key=os.getenv("ZHIPU_API_KEY")
 )
 
 # 加载向量库
@@ -19,9 +20,16 @@ vectorstore = Chroma(
     persist_directory=persist_dir,
     embedding_function=embeddings
 )
+# 加载向量库后
+vectorstore = Chroma(
+    persist_directory=persist_dir,
+    embedding_function=embeddings
+)
 
+# 打印库里的文档数量
+print(f"向量库文档数量: {vectorstore._collection.count()}")
 # 加载测试集
-eval_data_path = os.path.join(current_dir, "eval_data.json")
+eval_data_path = os.path.join(current_dir, "data", "v1", "eval_data.json")
 with open(eval_data_path, "r", encoding="utf-8") as f:
     eval_data = json.load(f)
 
@@ -42,7 +50,14 @@ def evaluate(k=5):
         # 检索
         docs = vectorstore.similarity_search(query, k=k)
 
-        # 检查是否命中（ground_truth的关键词出现在检索结果中）
+        # 调试：打印检索结果前 100 字
+        print(f"\n【问题】{query}")
+        print(f"【期望包含】{ground_truth}")
+        for i, doc in enumerate(docs):
+            print(f"【检索结果 {i + 1}】{doc.page_content[:100]}")
+        print("---")
+
+        # 检查是否命中
         hit = False
         for doc in docs:
             if ground_truth.lower() in doc.page_content.lower():

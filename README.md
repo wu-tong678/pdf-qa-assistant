@@ -41,13 +41,13 @@
 
 ### 基线：纯 Chroma 检索
 
-![纯 Chroma 评估结果](baseline_result.png)
+![纯 Chroma 评估结果](data/v1/baseline_result.png)
 
 - Top-5 Hit Rate = 73.68%
 
 ### 优化后：Chroma + 智谱 Rerank
 
-![Chroma + Rerank 评估结果](rerank_result.png)
+![Chroma + Rerank 评估结果](data/v1/rerank_result.png)
 
 - Top-5 Hit Rate = 73.68%（Rerank 接口已调通）
 

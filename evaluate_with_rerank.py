@@ -3,16 +3,18 @@ import os
 import requests
 from langchain_chroma import Chroma
 from langchain_community.embeddings import ZhipuAIEmbeddings
-import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------- 配置 ----------
 current_dir = os.path.dirname(os.path.abspath(__file__))
-persist_dir = os.path.join(current_dir, "chroma_db_e860c154de9338af084149f9cecb85a6")
+persist_dir = os.path.join(current_dir, "chroma_db_plan")
 
 # 加载向量库
 embeddings = ZhipuAIEmbeddings(
     model="embedding-2",
-    api_key=st.secrets["ZHIPU_API_KEY"]
+    api_key=os.getenv("ZHIPU_API_KEY")
 )
 vectorstore = Chroma(
     persist_directory=persist_dir,
@@ -20,11 +22,11 @@ vectorstore = Chroma(
 )
 
 # 加载测试集
-with open(os.path.join(current_dir, "eval_data.json"), "r", encoding="utf-8") as f:
+with open(os.path.join(current_dir, "data", "v1", "eval_data.json"), "r", encoding="utf-8") as f:
     eval_data = json.load(f)
 
 # 智谱 Rerank 配置
-ZHIPU_API_KEY = st.secrets["ZHIPU_API_KEY"]
+ZHIPU_API_KEY = os.getenv("ZHIPU_API_KEY")
 RERANK_URL = "https://open.bigmodel.cn/api/paas/v4/rerank"
 
 
