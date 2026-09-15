@@ -7,7 +7,8 @@ from langchain_community.embeddings import ZhipuAIEmbeddings
 from app.schemas.chat import ChatRequest, ChatResponse
 from services.llm import init_llm
 from services.rag import ask
-
+from fastapi.responses import StreamingResponse
+from services.rag import ask, ask_stream
 load_dotenv()
 
 router = APIRouter()
@@ -47,3 +48,10 @@ def chat(req: ChatRequest):
     vectorstore, llm = _get_resources()
     answer, _ = ask(vectorstore, llm, req.question, k=req.k)
     return ChatResponse(answer=answer)
+@router.post("/chat/stream")
+async def chat_stream(req: ChatRequest):
+    vectorstore, llm = _get_resources()
+    return StreamingResponse(
+        ask_stream(vectorstore, llm, req.question, k=req.k),
+        media_type="text/event-stream"
+    )
