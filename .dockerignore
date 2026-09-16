@@ -1,0 +1,11 @@
+.venv/
+.git/
+.gitignore
+__pycache__/
+*.pyc
+.env
+chroma_db_*/
+chroma_uploads/
+data/
+*.md
+test_stream.py
