@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain_community.embeddings import ZhipuAIEmbeddings
-
+from core.logging import logger
 from app.schemas.chat import ChatRequest, ChatResponse
 from services.llm import init_llm
 from services.rag import ask
@@ -45,11 +45,14 @@ def ping():
 
 @router.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
+    logger.info(f"收到问题: {req.question[:50]}")
     vectorstore, llm = _get_resources()
     answer, _ = ask(vectorstore, llm, req.question, k=req.k)
+    logger.info(f"返回答案: {answer[:50]}")
     return ChatResponse(answer=answer)
 @router.post("/chat/stream")
 async def chat_stream(req: ChatRequest):
+    logger.info(f"流式请求: {req.question[:50]}")
     vectorstore, llm = _get_resources()
     return StreamingResponse(
         ask_stream(vectorstore, llm, req.question, k=req.k),

@@ -19,3 +19,6 @@ chroma_uploads/
 # 密钥和配置
 .env
 .streamlit/secrets.toml
+
+
+logs/
