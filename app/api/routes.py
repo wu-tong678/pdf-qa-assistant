@@ -6,7 +6,6 @@ from langchain_community.embeddings import ZhipuAIEmbeddings
 from core.logging import logger
 from app.schemas.chat import ChatRequest, ChatResponse
 from services.llm import init_llm
-from services.rag import ask
 from fastapi.responses import StreamingResponse
 from services.rag import ask, ask_stream
 load_dotenv()
