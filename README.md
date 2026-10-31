@@ -11,7 +11,7 @@
 - 🌐 提供 HTTP API，其他程序可调用
 - ⚡ 流式输出（SSE），支持打字机效果
 - 🐳 Docker 容器化，一键部署
-
+- 🦙 支持 Ollama 纯本地私有化部署，断网亦可运行
 ## 技术栈
 
 **核心框架：**
@@ -22,8 +22,8 @@
 
 **数据与模型：**
 - Chroma（向量数据库，持久化存储）
-- 智谱 GLM-4（大模型）
-- 智谱 GLM-Rerank（精排优化）
+- 本地模型引擎（通过 Ollama 部署）：Qwen2.5（大语言模型） + nomic-embed-text（向量模型）
+- 云端 API 引擎（备用/切换）：智谱 GLM-4（大语言模型） + 智谱 Embedding/Rerank
 
 **工程化：**
 - Docker（容器化部署）
@@ -66,7 +66,7 @@ streamlit run app.py
 ## 在线体验
 
 [https://pdf-app-assistant-xogchwtvcwzl4dv88wmljj.streamlit.app/](https://pdf-app-assistant-xogchwtvcwzl4dv88wmljj.streamlit.app/)
-
+(注：由于 Streamlit 免费服务器存在休眠机制，初次打开可能需要等待几十秒唤醒；若链接失效，请参考下方的“快速开始”在本地运行体验。)
 ## 项目截图
 
 <img src="images/screenshot.png" alt="项目截图" width="600">
@@ -111,6 +111,7 @@ streamlit run app.py
 ## 项目亮点
 
 - **分层架构**：`app/`（FastAPI）+ `core/`（基础设施）+ `services/`（业务逻辑），Streamlit 和 FastAPI 共用同一套 service 层
+- **本地私有化部署**：支持将 LLM 与 Embedding 模型完全切换至本地 Ollama（Qwen2.5 + nomic-embed-text），实现零 API 成本、数据不出域的离线 RAG 全流程
 - **流式输出**：基于 SSE 的 `/api/chat/stream` 接口，前端可实现打字机效果
 - **容器化部署**：Dockerfile + .dockerignore，一键构建镜像
 - **可观测性**：loguru 日志系统，中间件记录每次请求的方法、路径、状态码、耗时

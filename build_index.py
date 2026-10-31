@@ -2,7 +2,7 @@ import sys
 import os
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
-from langchain_community.embeddings import ZhipuAIEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -31,9 +31,8 @@ chunks = [
 ]
 print(f"✂️ 切片后块数: {len(chunks)}")
 
-embeddings = ZhipuAIEmbeddings(
-    model="embedding-2",
-    api_key=os.getenv("ZHIPU_API_KEY")
+embeddings = OllamaEmbeddings(
+    model="nomic-embed-text"
 )
 
 # 初始化空向量库

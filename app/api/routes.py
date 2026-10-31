@@ -2,7 +2,7 @@ import os
 from fastapi import APIRouter
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
-from langchain_community.embeddings import ZhipuAIEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from core.logging import logger
 from app.schemas.chat import ChatRequest, ChatResponse
 from services.llm import init_llm
@@ -24,12 +24,11 @@ def _get_resources():
     """懒加载 LLM 和向量库"""
     global _vectorstore, _llm
     if _vectorstore is None:
-        embeddings = ZhipuAIEmbeddings(
-            model="embedding-2",
-            api_key=os.getenv("ZHIPU_API_KEY")
+        embeddings = OllamaEmbeddings(
+            model="nomic-embed-text"
         )
         _vectorstore = Chroma(
-            persist_directory=os.path.join(BASE_DIR, "chroma_db_attention"),
+            persist_directory=os.path.join(BASE_DIR, "chroma_db_local"),
             embedding_function=embeddings
         )
     if _llm is None:

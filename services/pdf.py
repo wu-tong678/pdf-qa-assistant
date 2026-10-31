@@ -3,7 +3,7 @@ import hashlib
 import tempfile
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import ZhipuAIEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
 
@@ -18,9 +18,8 @@ os.makedirs(CHROMA_BASE, exist_ok=True)
 
 
 def _get_embeddings():
-    return ZhipuAIEmbeddings(
-        model="embedding-2",
-        api_key=os.getenv("ZHIPU_API_KEY")
+    return OllamaEmbeddings(
+        model="nomic-embed-text"
     )
 
 

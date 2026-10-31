@@ -1,6 +1,4 @@
 from langchain_classic.chains import RetrievalQA
-
-
 def ask(vectorstore, llm, question, k=3):
     """
     检索 + 生成答案。
